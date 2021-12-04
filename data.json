@@ -1,0 +1,15 @@
+[
+    {
+        "fristname": "carlos",
+        "phone": "3146358194",
+        "address":"calle 89# 45-52"
+    },
+    {   "fristname": "juan",
+        "phone": "3146358125",
+        "address":"calle 89# 45-36"},
+    {
+        "fristname": "camilo",
+        "phone": "3146358197",
+        "address":"calle 89# 45-45"
+    }
+]
