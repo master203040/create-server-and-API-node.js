@@ -6,7 +6,7 @@ import store from "./api/models/store.js";
 const app = express();
 const port =5500
 
-const mongoURI ="mongodb+srv://API:fb5M1Ljem9BFiaXN@cluster0.ihuum.mongodb.net/Cluster?retryWrites=true&w=majority"
+const mongoURI ="mongodb+srv://API:fb5M1Ljem9BFiaXN@cluster0.ihuum.mongodb.net/ClusterO?retryWrites=true&w=majority"
 
 mongoose.connect(mongoURI,{})
 
