@@ -1,5 +1,4 @@
 import  express  from "express"
-//import mysql from 'mysql'
 import mongoose from 'mongoose'
 import store from "./api/models/store.js";
 
@@ -39,14 +38,14 @@ app.post("/api/clients",(req,res)=>{
 })
 //Enpoint Delete
 app.delete("/api/clients",(req,res)=>{
-    store.deleteMany({},()=>{
+    store.deleteMany({},(err)=>{
         res.status(500).send(err)
 
     })
 })
 
-//Enpoint Recivir 
-app.get("/",(req ,res)=>{
+//Enpoint Recibir 
+app.get("/api/clients",(req ,res)=>{
     store.find({},(err,docs)=>{
         if (err) {
             res.status(500).send(err)
@@ -57,7 +56,7 @@ app.get("/",(req ,res)=>{
 
 });
 
-//server
+//Server
 app.listen(port,()=>{
     console.log(`serve on port http:/localhost: ${port}`);
 
