@@ -6,25 +6,16 @@ import store from "./api/models/store.js";
 const app = express();
 const port =5500
 
+//connect on mongoDB
 const mongoURI ="mongodb+srv://API:fb5M1Ljem9BFiaXN@cluster0.ihuum.mongodb.net/ClusterO?retryWrites=true&w=majority"
 
 mongoose.connect(mongoURI,{})
 
-//conexion con mysql
-/*const conexion= mysql.createConnection({
-
-    host: 'localhost',
-    database: '',
-    user: 'root',
-    password: ''
-
-})
-*/
 
 //middlework
 app.use(express.json({limit: "50mb"}))
 
-//enpoint
+//Enpoint Enviar
 app.post("/api/clients",(req,res)=>{
     
    let clientData= req.body
@@ -46,13 +37,21 @@ app.post("/api/clients",(req,res)=>{
    //res.send('you have posted something')
     
 })
+//Enpoint Delete
+app.delete("/api/clients",(req,res)=>{
+    store.deleteMany({},()=>{
+        res.status(500).send(err)
 
+    })
+})
+
+//Enpoint Recivir 
 app.get("/",(req ,res)=>{
     res.send("hello world...23")
 
 });
 
-//serve
+//server
 app.listen(port,()=>{
     console.log(`serve on port http:/localhost: ${port}`);
 
