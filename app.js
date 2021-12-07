@@ -47,7 +47,13 @@ app.delete("/api/clients",(req,res)=>{
 
 //Enpoint Recivir 
 app.get("/",(req ,res)=>{
-    res.send("hello world...23")
+    store.find({},(err,docs)=>{
+        if (err) {
+            res.status(500).send(err)
+        }else{
+            res.status(200).send(docs)
+        }
+    })
 
 });
 
